@@ -60,7 +60,7 @@ the object's state cannot be modified after declaring it
 #### What is a conditional expression in Python?
 if, elif, else
 #### What are different types of arguments in Python?
->, <, >=, <=, !=, ==
+keyword arguments, default arguments, variable length arguments, variable length keyword arguments
 #### What is variable shadowing? (context: variable scope)
 a variable declared within a certain scope has the same name as a variable declared in an outer scope
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
@@ -73,7 +73,7 @@ i'd define it outside the for loop first
 strings, integers, boolians and other lists
 #### What is slice operator in Python and how to use?
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
-'+' adds to the value of the variable in the listelement, '*' multiplies the value in the list element or multiplies the list itself, '-' substracts from the list element
+'+' adds to the value of the variable in the list element, '*' multiplies the value in the list element or multiplies the list itself, '-' substracts from the list element
 #### What is the purpose of the in and not in membership operators in Python?
 'in' checks if a value is inside a variable, 'not' checks if a value is different fron the control value.
 #### What does the + operator mean when used with strings in Python?
