@@ -231,14 +231,14 @@ You can easily backtrack if you break something in the code that you don't neces
 #### What is the difference between the working directory, the staging area and the repository in git?
 Working directory is the current active directory that you modify.
 Staging area contains the branches that you work on.
-The repository contains all the branches including the staging area and the working directory.
+The repository contains the entire program on different branches.
 
 #### What are remote repositories in git?
 Remote repositories are repositories that are not on the computer you are working on.
 
 #### Why does a merge conflict occur?
 When your instance of the repository is outdated.
-To fix merge conflicts you must update your instance using the git pull command, then handle the merge conflicts in the IDE.
+To fix merge conflicts you must update your instance using the git pull command, then handle the merge conflicts inside your IDE.
 
 #### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
 git add 'file.extension'
