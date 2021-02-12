@@ -9,12 +9,20 @@ We use lists when we want to store objects in a way that we can access them.
 A lists element can be accessed via the elements index number.
 The index number starts from 0 so if we want to access the list's first element then we have to reffer to it as list[0].
 
+Methods:
+    list.copy()
+    list.append()
+    list.count()
+    list.remove()
+    list.pop()
+    list.reverse()
+
 #### What is the difference between a list/array and a set?
 An array is an ordered pool of objects and the objects inside can be reffered by their index, or place in the list.
 A set is unordered and it's objects cannot be reffered to by indexing.
 
 #### What is the purpose and methods of a dictionary/map data structure?
-The purpose of a dictionary is similar to a normal, language dictionary, translation between input and interpretation
+The purpose of a dictionary is similar to a normal, language dictionary, translation between input and interpretation.
 When we create a dictionary we give a value (a key) that will be inputted and a value that the key should return
 Creation of a dictionary: mydict = {'key1':'value1', 'key2':''value2}
 
