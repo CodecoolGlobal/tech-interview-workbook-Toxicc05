@@ -60,7 +60,7 @@ main()
     
 #### What do we call an *in-place* sort?
 An in-place sorting algorithm sorts values without the need of auxillary data structures.
-This helps to keep memory usage at a minimum.
+This helps to keep memory usage at a minimum by reducing the variables stored in the memory.
 
 #### Explain an algorithm which sorts a list!
 It takes a value from a list and swaps it with another in the same list based on parameters we gave it.
@@ -78,7 +78,7 @@ It's often the result of faulty programming and/or infinite loops.
 #### What are the main parts of a function?
 *The function name 
 *The arguments 
-*The algorithm itself
+*The algorithm
 
 def 'function name'('the argument'):
     'the algorithm'
@@ -90,8 +90,8 @@ def 'function name'('the argument'):
 
 #### How do you use a dictionary in Python?
 Making a directory: dict = {key:value}
-Referencing keys value in dictionary: dict[x] (gives back the value by default)
-Referencing key in dictionary: dict[x].key() (gives back the key)
+Referencing keys value in dictionary: dict['key'] (gives back the value by default)
+Referencing key in dictionary: dict['key'].key() (gives back the key)
 
 #### What does it mean that an object is immutable in Python?
 The object's state cannot be modified after declaring it.
@@ -109,7 +109,7 @@ The result of the boolian expression is either True or False.
 *Command-line arguments = the arguments value is declared when starting the program in a command-line, like the linux terminal.
 
 #### What is variable shadowing? (context: variable scope)
-A variable declared within a certain scope has the same name as a variable declared in an other scope
+A variable declared within a certain scope has the same name as a variable declared in an other scope.
 
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
 Add: The iteration continues without an issue, albeit with different ammount of elements.
@@ -137,7 +137,7 @@ The slice operator returns a slice of a list/set/dictionary.
 a[0:2] = returns the first and second element of the 'a' list. (the second argument is the uppermost limit and is not included in the return value)
 a[0:-1] = returns all elements except the last one of the 'a' list.
 a[::-1] = returns a reversed list.
-a[::2] = skips every second element of the list
+a[::2] = skips every second element of the list.
 
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
 '+' adds to the value of the variable in the list element or joins two lists together or adds a string into a list character by character or by itself.
@@ -154,8 +154,14 @@ The '+' operator is used to add characters or other strings at the end of string
 
 #### Explain f strings in Python?
 f-strings are strings that contain the value of a variable in them and thus making them dynamic.
-game = Pokemon GO!
-example: f"I play {game} every day!\nI play {game}!"
+
+example:
+    game = Pokemon GO
+    print(f"I play {game} every day!\nI play {game}!")
+
+output = I play Pokemon GO every day!
+         I play Pokemon GO!
+
 f-strings are easier to make dynamic texts with than with using the traditional '+' operator.
 
 #### Name 4 iterable types in Python!
@@ -165,8 +171,9 @@ f-strings are easier to make dynamic texts with than with using the traditional 
 *Dictionaries
 
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
-Lists, sets and dictionaries can be mentioned by themselves. (printed out) 
-Generator expressions can only be reffered to in loops. (printed out)
+Lists, sets and dictionaries can be reffered to by themselves. (or printed out) 
+Generator expressions can only be reffered to in loops. (or printed out)
+Generator functions contain one or more yield statements instead of a return statement.
 
 #### Does the order of the function definitions matter in Python? Why?
 Yes, it matters if you want to use one function inside another.
@@ -174,7 +181,8 @@ Then the inner function must be defined before the outer definition.
 
 #### What does unpacking mean in Python?
 Unpacking is a way in wich arguments can be given to a function from a list/set/dictionary.
-Unpacking is done via the '**' operator.
+Unpacking is done via the '*' or the '**' operator.
+
 example:
     def asd(a, b, c):
         print(a, b, c)
@@ -187,7 +195,7 @@ output = 2 4 10
 Unpacking too many arguments result in an argument overflow.
 
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
-The resulting variables value will become NULL (empty)
+The resulting variables value will become NULL. (empty)
 
 ## Software engineering
 
@@ -197,10 +205,12 @@ The resulting variables value will become NULL (empty)
 Use the built in debugger from the IDE.
 Read between the code and try to figure out the problem on my own.
 Print out the variables (this is similar to using the IDEs debugger).
+
 #### What does step over, step into and step out mean while using the debugger?
 Step over steps over the next line or loop in the code.
 Step into steps into definitions or loops.
 Step out does the opposite that step into does.
+
 #### How can you start to debug a program from a certain line using the debugger?
 You can place break points in the IDE at the line you want to start debugging at.
 Breakpoints stop the running of the code while using the built in debugger tool.
@@ -209,19 +219,24 @@ Breakpoints stop the running of the code while using the built in debugger tool.
 
 #### What are the advantages of using a version control system?
 You can easily backtrack if you break something in the code that you don't necessarily know the solution for.
+
 #### What is the difference between the working directory, the staging area and the repository in git?
 Working directory is the current active directory that you modify.
 Staging area contains the branches that you work on.
 The repository contains all the branches including the staging area and the working directory.
+
 #### What are remote repositories in git?
 Remote repositories are repositories that are not on the computer you are working on.
+
 #### Why does a merge conflict occur?
 When your instance of the repository is outdated.
-To fix merge conflicts you must update your instance using the git pull command, then handle the conflicts in the IDE.
+To fix merge conflicts you must update your instance using the git pull command, then handle the merge conflicts in the IDE.
+
 #### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
 git add 'file.extension'
 git commit -m 'commit message'
 git push
+
 #### What does it mean atomic commits and descriptive commit messages?
 Atomic commit means a set of distinct changes as a single operation.
 If the changes are applied, then the atomic commit is successful.
@@ -230,7 +245,7 @@ Descriptive commit messages are those that accurately describe the changes commi
 
 #### What’s the difference between git and GitHub?
 Git is a repository manager software where everyone has the repository stored locally at the same time.
-Github is a website for monitoring git projects, commits, and branches inside the repository
+Github is a website for monitoring git projects, commits, and branches inside the repository.
 
 ## Software design
 
@@ -260,7 +275,7 @@ Knowing how to handle the exception. (Knowing what process to write to when addr
 When it is prompt to break our program.
 
 #### What can/should we do with an exception in the ‘except’ block?
-Write an error message on what part of the program had had an unhandled exception
+Write an error message on what part of the program had had an unhandled exception.
 Offer another input opportunity uppon error.
 
 #### What does the else and finally statement do in a try-except block in Python?
@@ -296,7 +311,7 @@ Via the file browser or by the Terminal with the ls command.
 Either from the Linux store or via the Terminal, using repositories.
 
 #### What is package management in Linux, what are repositories?
-Repositories are used to store multiple programs' addresses in them for them to be more easily downloadable.
+Linux repositories are used to store multiple programs for them to be more easily downloadable.
 You can install linux programs from repositories with the 'apt-get' or 'apt install' commands.
 A file in a repository can either be open-source or closed-source.
 Open source programs are those that are made by the linux community.
@@ -305,7 +320,8 @@ Closed-source programs are proprietary programs, for example: Drivers
 #### How do you navigate in the filesystem with the command line?
 *Using 'cd' then space, then the desired directory. 
 *'cd ..' is then used to go back one directory. 
-*'cd /' is used to instantly go to the main directory.
+*'cd /' is used to instantly go to the home directory.
+*'cd path/path/path/path' can be used to instantly go to into the specified directory.
 
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
 *mkdir = Make Directory (to make a directory)
@@ -319,11 +335,11 @@ By using --help in Terminal after a command.
 --help can be used to print helping instructions on the Terminal
 
 #### What does the following commands do: head, tail, more, less?
-By default, it displays the first 10 lines of a file
-Tail displays the last 10 lines of a file
-The more command displays a percentage more of the file
-The less command displays a percentage less of the file
+By default, it displays the first 10 lines of a file.
+Tail displays the last 10 lines of a file.
+The more command displays a percentage more of the file.
+The less command displays a percentage less of the file.
 
 #### How do you download a file from internet using the terminal?
-Using the wget command then puting in the url
-In the case of multiple simoltanious downloads, wget can be used on text files with multiple links in them.
+Using the wget command then puting in the files URL.
+In the case of multiple simoltanious downloads, wget can be used on text files with multiple URLs in them.
