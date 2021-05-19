@@ -184,7 +184,7 @@
 * JSON is an open standard  file format and data interchange format.
 * JSON files and data consist of key-value pairs but are not to be mistaken with DICT objects.
 * JSON data can be used to communicate with the server using JavaScript.
-* JSON data can be used to deliver data to and from the server without the need of reloading the webpage.
+* JSON data can be used to deliver data to and from the server without the need of reloading a webpage.
 * JSON files can be used to store settings in applications.
 ## Software engineering
 
@@ -216,16 +216,44 @@
 ### Networks
 
 #### What kind of HTTP status codes do you know?
-#### What is a API?
+* 200 - OK (Everything went fine)
+* 403 - Forbidden (The user does not have the necessary permissions)
+* 404 - Not Found (The page source was not found on the requested)
+* 405 - Method Not Allowed (The method with which the request was sent was not allowed on the requested url)
+* 408 - Request Timeout (The server timed out waiting for the request. The client was not able to produce a request in the expected time period.)
+#### What is an API?
+* API stands for Application Programming Interface.
+* An API defines interactions between multiple software applications or mixed hardware-software intermediates.
 #### What is REST API?
+*
 #### What is JSON? When to use?
+* JSON stands for JavaScript Object Notation.
+* JSON is an open standard  file format and data interchange format.
+* JSON files and data consist of key-value pairs but are not to be mistaken with DICT objects.
+* We use JSON when we want to deliver information from front-end to the server and back or when we want to store user settings.
 #### What is TCP/IP? What layers does it define, what are they responsible for?
+* TCP stands for transmission Control Protocol.
+* IP stands for Internet Protocol.
+* They are a set of rules governing communications among all computers on the internet.
 #### What’s the difference between TCP and UDP?
+* TCP connections pre-check packets for possible errors.
+* UDP connections do not check for errors.
+* For this reason, UDP connections have lower latency, than TCP connections.
 #### How does an HTTP Request look like? What are the most relevant HTTP header fields?
+*
 #### How does an HTTP Response look like? What are the most relevant HTTP header fields?
+*
 #### What is DNS? How does it work?
+* DNS stands for Domain Name Service.
+* DNS services act like phonebooks for the internet.
+* When you search for 'youtube.com' in your browser, your request gets sent through a DNS server, that DNS server then translates your url and sends you to the corresponding IP address.
 #### What is a web server?
+* A web server is a computer and software combination that is connected to the internet and accepts HTTP requests do distribute web pages.
 #### Explain the client-server architecture.
+* The client sends a request to the server.
+* The server translates the request and gets the requested information from it's data storage (usually database).
+* The server then sends an html webpage (or template) to the users browser with the requested data.
+* The client's browser then compiles and displays the webpage for the user.
 #### What would you use a session for?
 #### What would you use a cookie for?
 
