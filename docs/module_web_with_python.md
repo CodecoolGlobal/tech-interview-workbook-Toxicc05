@@ -83,47 +83,124 @@
 
 ### Procedural
 #### How the CASE condition works in SQL?
+*
 #### How the switch-case condition works in JavaScript?
+* The switch statement checks a variable's value.
+* The case statement returns a value according to what the variables value is.
+* Essentially, the switch-case condition acts as a translation layer for data input.
 #### How to achieve a switch-case-like structure in Python?
+*
 #### Explain variable scoping in Python!
+* A variable created inside a function is only accessible in that function.
+* Variable Shadowing: When a local variable has the same name as that of an outer-scope variable. (Bad)
 #### What’s the difference between const and var in JavaScript?
+* Var elements' values can be altered after declaring them.
+* Const elements' values cannot be altered after declaring them.
 #### How the list comprehension looks like in Python?
+* fruits = ['apple', 'banana', 'cherry']
+* newlist = [x for x in fruits if 'a' in x] <--this returns a list with only those fruits that have the letter 'a' in them.
 #### How the “ternary expression” looks like in Python?
+* return 'a' if (c > b) else 'f' <-- This returns 'a' if c is bigger than b, else it return 'f'.
 #### How the ternary expression looks like in JavaScript?
+* return c > b ? 'a' : 'f' <-- This returns 'a' if c is bigger than b, else it return 'f'.
 #### How to import a function from another module in Python?
+* 'from [module] import [function] as [rename]' <-- Imports a single function from a module and renames it.
+* 'import [module]' <-- Imports all functions from a module.
+* 'from [module] import [function1], [function2]' <-- Import multiple functions from a single module.
+* 'import [module], [module]' <-- Import all functions from multiple modules
 #### How to import a function from another module in JavaScript?
+* import defaultExport from "module-name";
+* import * as name from "module-name"; <-- 
+* import { export1 } from "module-name"; <--Import a single function from a module.
+* import { export1 as alias1 } from "module-name"; <-- Import a single function from a module and rename it.
+* import { export1 , export2 } from "module-name"; <-- Import multiple functions from a single module.
+* import { foo , bar } from "module-name/path/to/specific/un-exported/file"; <-- Import module from exact path.
+* import { export1 , export2 as alias2 , [...] } from "module-name";
+* import defaultExport, { export1 [ , [...] ] } from "module-name";
+* import defaultExport, * as name from "module-name";
+* import "module-name";
+* var promise = import("module-name");
 
 ### Functional
 #### What is recursion?
+* Recursion is when a function's argument refers to a function's return value instead of a variable.
 #### Write a recursive function which calculates the Fibonacci numbers!
+*
 #### How to store a function in a variable in Python?
+* x = function('argument(s)')
 #### List the ways of defining a callable logical unit in JavaScript!
+*
 #### What is an event listener? How to attach one?
+* Event listeners attach a Javascript function to DOM elements that are only called when a specified 'event' is happening.
+* Such events include 'click', 'dragstart', 'dragover', 'dragend'.
+* Example:
+	let x = document.querySelector('#id')
+	x.addEventListener('click', function(event){ body of the function })
 #### How to trigger an event in JavaScript?
+* The first argument in the event listener hints to the method of how to trigger it's function.
+* 'click' <-- function triggers upon clicking at the target,
+* 'dragstart' <-- function triggers upon starting to drag the object,
+* 'dragover' <-- function triggers upon dragging something over the event target.
+* 'dragend' <-- function triggers upon deciding to end the dragging of the event target,
+* 'drop' <-- function triggers upon dropping the event target to somewhere other than where it started from originally.
 #### What is a callback function? Tell some examples of its usage.
+*
 #### What is a Python decorator? How does it work? Tell some examples of its usage.
+*
 #### What is the difference between synchronous and asynchronous execution?
-
+* Syncronous execution means that the functions elements get called in one after the other on a single thread.
+* Asyncronous execution means that some elements of the function get called into a stack and are only returned once they are finished.
+* The elements that are in the stack do not affect the flow of other elements, only when they are referenced.
+* Asyncronous functions call upon asyncronous elements using "await". 
+* That means that a function, loop or statement must wait for the asyncronous element to finish returning it's value.
 ## Programming languages
 
 ### SQL
 
 #### How can you connect your application to a database server? What are the possible ways?
+*
 #### When do you use the DISTINCT keyword in SQL?
+* When we want to retrieve information in such a way that it does not contain repetitions.
 #### Talk about the behavior/goal of these base SQL clauses: WHERE, GROUP BY, HAVING, ORDER BY?
+* WHERE sets a set of rules that the resulting data must follow after the SELECT-FROM condition pair.
+* GROUP BY groups the results based on one or more columns.
+* HAVING checks wether datas have something in them. ex.: HAVING id > 12
+* ORDER BY orders the results based on one or more columns of the table.
 #### What are aggregate functions in SQL? Give 3 examples.
+*
+*
+*
+*
 #### What kind of JOIN types do you know in SQL? Could you give examples?
+* INNER JOIN: Returns records that have matching values in both tables
+* LEFT JOIN: Returns all records from the left table, and the matched records from the right table
+* RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
+* FULL JOIN: Returns all records when there is a match in either left or right table
 #### What are the constraints in sql?
+* Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement.
+* Constraints are used to limit the type of data that can go into a table column.
+* NOT NULL - Ensures that a column cannot have a NULL value
+* UNIQUE - Ensures that all values in a column are different
+* PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+* FOREIGN KEY - Prevents actions that would destroy links between tables
+* CHECK - Ensures that the values in a column satisfies a specific condition
+* DEFAULT - Sets a default value for a column if no value is specified
+* CREATE INDEX - Used to create and retrieve data from the database very quickly
 #### What is a cursor in SQL? Why would you use one?
+*
 #### What are database indexes? When to use?
-#### What are database transactions? When to use?
+*
+#### What are database transactions? When to use? 
 #### What kind of database relations do you know? How to define them?
+*
 #### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and address). How would you query all records related to Miskolc?
+SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 #### How would you keep track of what kind of data has changed after an UPDATE or DELETE operation in a table?
-
+*
 ### HTML & CSS
 
 #### What’s the difference between XML, XHTML and HTML?
+*
 #### How to include a JavaScript file in a webpage?
 * Via the <script/> html tag. 
 * Javascript can either be written into the HTML in between the <script/> tags or a javascript file can be allocated with the src parameter.
@@ -255,8 +332,10 @@
 * The server then sends an html webpage (or template) to the users browser with the requested data.
 * The client's browser then compiles and displays the webpage for the user.
 #### What would you use a session for?
+* To monitor and manage clients' permissions on the server.
+* To cherrypick data that is specific to that exact user.
 #### What would you use a cookie for?
-
+* To store information about a client such as: login credentials, permissions, and on-site search history.
 ## Software Development Methodologies
 
 #### What kind of software development methodologies do you know? What are the main features of these?
