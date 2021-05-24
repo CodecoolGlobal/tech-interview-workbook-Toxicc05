@@ -8,8 +8,8 @@
 * Separate your query into multiple lines.
 * Capitalize keywords such as "WHERE, HAVING, SELECT" for better readability.
 * Use "AS" to rename columns when needed for a prettier display.
-* Choose either cammel-case or underscore when naming objects, but never both.
-*
+* Use underscore when naming tables/columns with multiple words in them.
+* Avoid giving the same name for both the table and a column.
 #### What layers can you name in a simple web application?
 * Front-end (What happens on the user's computer.)
 * Back-end (What happens on the server's side.)
@@ -23,16 +23,17 @@
 * A try-except block is used to catch special exceptions types in a program.
 * The finally block runs once the try-except block has finished it's tasks. 
 #### Why should we catch special exception types?
-*
+* Exceptions are prone to break the running of our code when they occur.
+* Catching exceptions allows us to do a workaround when an exception occurs so that they won't break our code.
 ### Security
 #### What is SQL injection? How to protect an application against it?
 * SQL injection is a code injection technique in which a client inserts malicious SQL statements into an entry field for execution.
-* Fields prone to SQL injection attacks are always using POST methods to communicate with the server.
+* To protect your applications from SQL Injection. Check all data coming from the user and use scripts or libraries to catch keywords in the data.
 * example: Hello, my name is'); DROP DATABASE users;
 #### What is XSS? How to protect an application against it?
 * XSS, Cross-Site-Scripting is a security breach which takes advantage of dynamically generated webpages.
 * An XSS attack happens when a client injects malicious third party scripts into a dynamically generated website.
-* Most common script types include: Javascript, VBNScript, HTML, Perl, C++, and most notably, Flash.
+* Most common script types include: Javascript, HTML, Flash <- now obsolete.
 * Via XSS, the client is able to: highjack accounts, change user settings, and/or poison cookies with malicious code.
 #### How to properly store passwords?
 * Password should be stored after put through a hashing (encoding) algorithm for increased security.
@@ -57,9 +58,10 @@
 * -The private key is held by the user and the private key is held by the company. 
 * -Both keys are needed to decypher the information.
 #### What hashing methods do you know?
-*
+* SHA - Secure Hashing Algorithm (Produces 20byte hashes). Quite secure against brute-force attacks.
+* MD5 - A widely used hashing algorithm, but not very secure.
 #### How/where would you store sensitive data (like db password, API key, ...) of your application?
-*
+* In a separate, secure, encripted database server.
 ## Computer science
 
 ### Algorithms
@@ -73,23 +75,30 @@
 * Bubble sorting works by repeatedly swapping the adjesent elements of a list if they are in the wrong order.
 * The sorting algorithm has to go through the list without changing any element to know that it's sorted.
 #### Explain the process of finding the maximum and minimum value in a list of numbers!
-* Because lists are in an orderly manner, we pick the first (minimum) and last (maximum) element of the list and return them.
+* We declare two variables, a minimum and a maximum and make it equal to the first element in the list.
+* Then we iterate over the list and when we find a number that is lower than our 'minimum' variable or bigger than our 'maximum' variable, then we swap the minimum's or the maxumum's value accordingly.
 #### Explain the process of calculating the average value in an array of numbers!
-* We iterate over every item in the array, add them together, then divide the result by the length of the array.
+* We iterate over every object in the array, sum up their values, then divide them with the length of the array.
 #### What is Big O complexity? Explain time and space complexity!
-*
+* We divide algorithms into so-called complexity classes. A complexity class is identified by the Landau symbol O ("big O").
+* Computational time complexity describes the change in the runtime of an algorithm, depending on the change in the input data's size.
+  (How much does an algorithm degrade when the amount of input data increases?)
+* Space complexity describes how much additional memory an algorithm needs depending on the size of the input data.
+  (The additional memory needed by the algorithm for loop and helper variables, temporary arrays, etc.)
 #### Explain the process of calculating the average value in a list of numbers!
-* Because lists are in an orderly manner, we take the first and last element of the list, add them together, then divide the result by 2.
+* We iterate over every object in the list, sum up their values, then divide them with the ammount of the numbers in the list.
 
 ### Procedural
 #### How the CASE condition works in SQL?
-*
+* The CASE condition returns a value based on a set of conditions.
+* The CASE condition uses WHEN to declare responses based on the result of it's condition.
 #### How the switch-case condition works in JavaScript?
 * The switch statement checks a variable's value.
-* The case statement returns a value according to what the variables value is.
-* Essentially, the switch-case condition acts as a translation layer for data input.
+* The case statement does something according to what the variables value is.
+* Essentially, the switch-case condition can act as a translation layer for data input.
 #### How to achieve a switch-case-like structure in Python?
-*
+* Via the usage of dictionaries.
+* We declare a dictionary, then translate the input by referencing it on the dictionary's keys.
 #### Explain variable scoping in Python!
 * A variable created inside a function is only accessible in that function.
 * Variable Shadowing: When a local variable has the same name as that of an outer-scope variable. (Bad)
@@ -109,27 +118,26 @@
 * 'from [module] import [function1], [function2]' <-- Import multiple functions from a single module.
 * 'import [module], [module]' <-- Import all functions from multiple modules
 #### How to import a function from another module in JavaScript?
-* import defaultExport from "module-name";
-* import * as name from "module-name"; <-- 
-* import { export1 } from "module-name"; <--Import a single function from a module.
-* import { export1 as alias1 } from "module-name"; <-- Import a single function from a module and rename it.
-* import { export1 , export2 } from "module-name"; <-- Import multiple functions from a single module.
-* import { foo , bar } from "module-name/path/to/specific/un-exported/file"; <-- Import module from exact path.
-* import { export1 , export2 as alias2 , [...] } from "module-name";
-* import defaultExport, { export1 [ , [...] ] } from "module-name";
-* import defaultExport, * as name from "module-name";
-* import "module-name";
-* var promise = import("module-name");
+* import defaultExport from "module-name"; <-- imports the defaultExport from a module.
+* import { export1 } from "module-name"; <--Import a single export from a module.
+* import { export1 as alias1 } from "module-name"; <-- Import a single export from a module and rename it.
+* import { export1 , export2 } from "module-name"; <-- Import multiple exports from a single module.
 
 ### Functional
 #### What is recursion?
-* Recursion is when a function's argument refers to a function's return value instead of a variable.
+* A recursive  function is when a function calls itself again based on a set of conditions.
 #### Write a recursive function which calculates the Fibonacci numbers!
-*
+*	def fib(n):
+    	    if n == 1 or n == 2:
+                return 1
+    	    return fib(n-1)+fib(n-2)
+        print(fib(15))
 #### How to store a function in a variable in Python?
 * x = function('argument(s)')
 #### List the ways of defining a callable logical unit in JavaScript!
-*
+* function squareNumbers(number){return number * number}
+* squareNumbers: funciton(number) {return number * number}
+* squareNumbers = (number) => number**2
 #### What is an event listener? How to attach one?
 * Event listeners attach a Javascript function to DOM elements that are only called when a specified 'event' is happening.
 * Such events include 'click', 'dragstart', 'dragover', 'dragend'.
@@ -144,15 +152,14 @@
 * 'dragend' <-- function triggers upon deciding to end the dragging of the event target,
 * 'drop' <-- function triggers upon dropping the event target to somewhere other than where it started from originally.
 #### What is a callback function? Tell some examples of its usage.
-*
+* Callback are when a function is used as argument in another function.
+* callback functions are useful when we want to manipulate an other functions retun data.
 #### What is a Python decorator? How does it work? Tell some examples of its usage.
 *
 #### What is the difference between synchronous and asynchronous execution?
 * Syncronous execution means that the functions elements get called in one after the other on a single thread.
-* Asyncronous execution means that some elements of the function get called into a stack and are only returned once they are finished.
-* The elements that are in the stack do not affect the flow of other elements, only when they are referenced.
-* Asyncronous functions call upon asyncronous elements using "await". 
-* That means that a function, loop or statement must wait for the asyncronous element to finish returning it's value.
+* Asyncronous functions mean that part of the function can be put into a queue and checked in later without blocking the main thread.
+
 ## Programming languages
 
 ### SQL
@@ -167,10 +174,10 @@
 * HAVING checks wether datas have something in them. ex.: HAVING id > 12
 * ORDER BY orders the results based on one or more columns of the table.
 #### What are aggregate functions in SQL? Give 3 examples.
-*
-*
-*
-*
+* SQL aggreagte functions operate on a set of values and returns a single value.
+* AVG() - returns the average of a set.
+* COUNT() - returns the number of items in a set.
+* SUM() - returns the sum of all or distinct values in a set.
 #### What kind of JOIN types do you know in SQL? Could you give examples?
 * INNER JOIN: Returns records that have matching values in both tables
 * LEFT JOIN: Returns all records from the left table, and the matched records from the right table
@@ -187,20 +194,29 @@
 * DEFAULT - Sets a default value for a column if no value is specified
 * CREATE INDEX - Used to create and retrieve data from the database very quickly
 #### What is a cursor in SQL? Why would you use one?
-*
+* A cursor is a mechanism that enables traversal over the records in a database.
+* Cursors facilitate subsequent processing in conjuction with the traversal.
+* We use cursors to retrieve, add, or remove database records.
 #### What are database indexes? When to use?
-*
-#### What are database transactions? When to use? 
+* A database index is a data structure that improves the speed of data retrieval operations on a database at the cost of additional writes and storage space to maintain the index data structure.
+* An index normally includes a 'key' or direct link to the original row of data from which it was copied.
+* We index databases when we want to improve the speed of data operations inside the database.
+#### What are database transactions? When to use?
+* A database transaction symbolizes a unit of work performed within a database management system against a database.
+* To provide isolation between programs accessing a database concurrently.
+* For recovery when an execution stops completely or partially and some or many operations remain incomplete.
 #### What kind of database relations do you know? How to define them?
 *
 #### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and address). How would you query all records related to Miskolc?
-SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
+* SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 #### How would you keep track of what kind of data has changed after an UPDATE or DELETE operation in a table?
-*
+* I would add a log table to my database where I would insert the altered rows before alteration.
 ### HTML & CSS
 
 #### What’s the difference between XML, XHTML and HTML?
-*
+* XML is used for data transfer between client and server.
+* HTML is a form of plain text that is used by the browser to display websites.
+* XHTML is a combination of both. XHTML requires that the document sent to the browser is well formated, unlike regular HTML.
 #### How to include a JavaScript file in a webpage?
 * Via the <script/> html tag. 
 * Javascript can either be written into the HTML in between the <script/> tags or a javascript file can be allocated with the src parameter.
@@ -219,7 +235,7 @@ SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 * example: ".alpha.beta {color: red;}" will color every html element that has the "alpha" alpha class and the "beta" beta class to be red.
 #### How to select all list items in all ordered lists on the page in CSS?
 * By refering to the html elements by tag name.
-* example: "ol {color: red;}" will color all elements in the ordered list to be red.
+* example: "ol li {color: red;}" will color all elements in the ordered list to be red.
 #### How to select elements using their attributes in CSS?
 * By putting the attribute in square brackets after the target's tag name.
 * example: "a[target] {color: red;}" will color all html elements red if they have the "target" attribute.
@@ -232,7 +248,9 @@ SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 * Reduce the users reliance on his/her/their memory by not hiding important functions behind multiple menus.
 * Users should be informed of what the app/system/product is doing on their device.
 #### What is XML, XSLT, DTD?
-*
+* XML, XSLT and DTD are all markup languages.
+* XML is a way of transfering information to a browser.
+* XSLT is uset to display XML data in a browser in a fancier manner.
 #### What is the difference between HTML and XML?
 * HTML (Hyper Text Markup Language) is used for creating static webpages.
 * XML (eXtensible Markup Language) is also used to create webpages, however, XML is used for transporting data, rather then displaying it.
@@ -268,13 +286,14 @@ SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 ### Version control
 
 #### What type of branching strategy would you use?
-* I would make a different branch for every task that is not closely related and name the branches according to the task.
+* I would make a different branch for every task that are not closely related and name the branches according to the company guidelines.
 #### What would you do if you find a bug on the production code (master branch)?
-*
+* Roll back the merge and continue to work on the feature branch.
+* Start a new branch for fixing the bug.
 #### How can you move changes from one branch to another in GIT?
 * By creating pull requests and merging the two branches that I want.
 #### How does a VCS help with code reviews?
-*
+* VCS provides standard requirements that all projects must follow.
 #### What is your favorite git command? Why?
 * Commit, because when I'm using it, it means that I've progressed with my tasks.
 #### What does remote/local mean in Git? 
