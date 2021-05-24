@@ -155,7 +155,22 @@
 * Callback are when a function is used as argument in another function.
 * callback functions are useful when we want to manipulate an other functions retun data.
 #### What is a Python decorator? How does it work? Tell some examples of its usage.
-*
+* A decorator takes in a function, adds some functionality and returns it.
+```Javascript
+def smart_divide(func):
+   def inner(a,b):
+      print("I am going to divide",a,"and",b)
+      if b == 0:
+         print("Whoops! cannot divide")
+         return
+
+      return func(a,b)
+   return inner
+
+@smart_divide
+def divide(a,b):
+    return a/b
+```
 #### What is the difference between synchronous and asynchronous execution?
 * Syncronous execution means that the functions elements get called in one after the other on a single thread.
 * Asyncronous functions mean that part of the function can be put into a queue and checked in later without blocking the main thread.
@@ -165,7 +180,9 @@
 ### SQL
 
 #### How can you connect your application to a database server? What are the possible ways?
-*
+* I need a connection string and a connection object from the database provider to set a session with the database server. For Python we can use the psycopg2 module api's to connect an application with psql database.
+* method 1: The entire environment resides on a single server. For a typical web application, that would include the web server, application server, and database server.
+* method 2: The database management system (DBMS) can be separated from the rest of the environment to eliminate the resource contention between the application and the database, and to increase security.
 #### When do you use the DISTINCT keyword in SQL?
 * When we want to retrieve information in such a way that it does not contain repetitions.
 #### Talk about the behavior/goal of these base SQL clauses: WHERE, GROUP BY, HAVING, ORDER BY?
@@ -206,7 +223,9 @@
 * To provide isolation between programs accessing a database concurrently.
 * For recovery when an execution stops completely or partially and some or many operations remain incomplete.
 #### What kind of database relations do you know? How to define them?
-*
+* One-to-One: A row in table A can have only one matching row in table B, and vice versa.
+* One-to-many: This is the most common relationship type. In this type of relationship, a row in table A can have many matching rows in table B, but a row in table B can have only one matching row in table A.
+(Each customer can only be assigned to one city. One city can be assigned to many customers.)*
 #### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and address). How would you query all records related to Miskolc?
 * SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
 #### How would you keep track of what kind of data has changed after an UPDATE or DELETE operation in a table?
@@ -273,7 +292,10 @@
 * Events can also be used as targets to target DOM elements in a Javascript function via "event.target"
 * examples for events: "click", "dragover", "dragstart", "dragend"
 #### What is event bubbling/capturing? How would you use it?
-*
+* Event bubbling happens when an inner scope function is called while an outer scope DOM element also has an event listener tied to it on the same event trigger.
+* Event bubbling means that all functions will activate one by one starting from the innermost scope.
+* Capturing is done to prevent the events from triggering all at once.
+* example: event.cancelBubble = true; or event.stopPropagation();
 #### What is JSON and how do we use it?
 * JSON stands for JavaScript Object Notation.
 * JSON is an open standard  file format and data interchange format.
@@ -321,7 +343,7 @@
 * API stands for Application Programming Interface.
 * An API defines interactions between multiple software applications or mixed hardware-software intermediates.
 #### What is REST API?
-*
+* A REST API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.
 #### What is JSON? When to use?
 * JSON stands for JavaScript Object Notation.
 * JSON is an open standard  file format and data interchange format.
@@ -336,9 +358,18 @@
 * UDP connections do not check for errors.
 * For this reason, UDP connections have lower latency, than TCP connections.
 #### How does an HTTP Request look like? What are the most relevant HTTP header fields?
-*
+* A simple request message from a client computer consists of the following components:
+	-A request line to get a required resource, for example a request GET /content/page1.html is requesting a resource called 		/content/page1.html from the server.
+	-Headers (Example – Accept-Language: EN).
+	-An empty line.
+	-A message body which is optional.
+	-All the lines should end with a carriage return and line feed. The empty line should only contains carriage return and line feed 		without any spaces.
 #### How does an HTTP Response look like? What are the most relevant HTTP header fields?
-*
+* A simple response from the server contains the following components:
+	-HTTP Status Code (For example HTTP/1.1 301 Moved Permanently, means the requested resource was permanently moved and redirecting 		to some other resource).
+	-Headers (Example – Content-Type: html)
+	-An empty line.
+	-A message body which is optional.
 #### What is DNS? How does it work?
 * DNS stands for Domain Name Service.
 * DNS services act like phonebooks for the internet.
@@ -358,9 +389,20 @@
 ## Software Development Methodologies
 
 #### What kind of software development methodologies do you know? What are the main features of these?
-* Pair Programming - When someone accompanies you during programming.
-* Parallel programming - When all members of the team work on different tasks. (The changes later need to be merged together.)
-* Group Programming - When the whole group sits together and works on one bit of code.
+* It’s a rigid linear model that consists of sequential phases (requirements, design, implementation, verification, maintenance) in which distinct goals are accomplished.
+	* Each phase must be 100% complete before the next phase can start, and traditionally there is no process for going back to 		modify the project or direction.
+* Adaptive approach which is able to respond to the changing requirements of the clients. Direct communication and feedback from customer.
+* Agile development methodology:
+ -Requirement/Features/User stories/Product Backlog
+ -Scrum Team(with lead)
+ -Sprint Planning(relative time)
+ -Sprints 1-4 Weeks Duration
+ -Production deployment
+ -Done Checklist
+   (While this process other people making the design, build it, inegrate, test the software)
+ -Sprint Retrospective
+ -Product review(customer input)
+ -Potential Product Increment
 #### What are the SCRUM roles?
 * The Product Owner: Setting directions for the project.
 * The SCRUM Master: Managing the development process.
@@ -386,4 +428,9 @@
 * To reflect on what went well and what went wrong during the week
 * To recognize potentially harmful behavioural problems in the group.
 #### Explain, when would you recommend to use the waterfall methodology?
-*
+* Use Waterfall when:
+  -The project is simple,
+  -The project is complicated, but you have the expertise to deliver it,
+  -It is all you know and you have no support for change,
+  -The upfront investment is not risky to make,
+  -You focus your performance measures on delivery date and budget.
