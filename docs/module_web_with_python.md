@@ -17,7 +17,7 @@
 ### Error handling
 #### What error can occur, when an array does not have an element on the requested index?
 * If the requested index is bigger than the length of the array, then an index error occurs.
-* Else, the program runs as it would normally, however, the returned value vill be empty.
+* Else, the program runs as it would normally, however, the returned value will be empty.
 #### What is the “finally” block, and how would you use it?
 * The finally block is part of a try-except block.
 * A try-except block is used to catch special exceptions types in a program.
@@ -133,7 +133,7 @@
     	    return fib(n-1)+fib(n-2)
         print(fib(15))
 #### How to store a function in a variable in Python?
-* x = function('argument(s)')
+* x = def foo(): print('asd')
 #### List the ways of defining a callable logical unit in JavaScript!
 * function squareNumbers(number){return number * number}
 * squareNumbers: funciton(number) {return number * number}
@@ -246,9 +246,13 @@ def divide(a,b):
 #### How to select an element using its id in CSS?
 * By using a "#" before the id name.
 * example: '#asd' refers to the html element with the "asd" id.
+* ex: x = document.getElementById('asd')
+* ex: x = document.querySelector('#asd')[0] <-- returns a list, hence the index at the end.
 #### How to select elements using their class in CSS?
 * By putting a "." before the class name.
 * example: '.asd' refers to the html element with the "asd" class.
+* ex: x = document.getElementsByClass('asd')[0] <-- returns a list, hence the index at the end.
+* ex: x = document.querySelector('.asd')[0] <-- returns a list, hence the index at the end.
 #### How to select elements which have the ‘alpha’ and ‘beta’ classes in CSS?
 * By putting the alpha and beta classes next to each other, separated by a dot.
 * example: ".alpha.beta {color: red;}" will color every html element that has the "alpha" alpha class and the "beta" beta class to be red.
@@ -262,7 +266,7 @@ def divide(a,b):
 * UI stands for User Interface. UI concerns the appearance an the interactable elemnts of the application.
 * UX stands for User Experience. UX concerns the overall user experience including usability, functionality, design, and engineering of the application.
 #### Please list some points that an application should fulfill to have good UX.
-* It has to be efficient to use and has to use language that the user is familiar with.
+* It has to be efficient to use and has to use (world) language that the user is familiar with.
 * Has to have at least some documentation about common errors and how to fix them.
 * Reduce the users reliance on his/her/their memory by not hiding important functions behind multiple menus.
 * Users should be informed of what the app/system/product is doing on their device.
@@ -270,8 +274,9 @@ def divide(a,b):
 * XML, XSLT and DTD are all markup languages.
 * XML is a way of transfering information to a browser.
 * XSLT is uset to display XML data in a browser in a fancier manner.
+* DTD (Document Type Definition) describes a tree structure of a document and something about it's data.
 #### What is the difference between HTML and XML?
-* HTML (Hyper Text Markup Language) is used for creating static webpages.
+* HTML (Hyper Text Markup Language) is used for creating static webpage templates that are later translated in the browser as basic webpages.
 * XML (eXtensible Markup Language) is also used to create webpages, however, XML is used for transporting data, rather then displaying it.
 ### Javascript
 
@@ -379,8 +384,8 @@ def divide(a,b):
 #### Explain the client-server architecture.
 * The client sends a request to the server.
 * The server translates the request and gets the requested information from it's data storage (usually database).
-* The server then sends an html webpage (or template) to the users browser with the requested data.
-* The client's browser then compiles and displays the webpage for the user.
+* The server then sends a html template to the users browser with the requested data.
+* The client's browser then compiles the html template and displays the webpage for the user.
 #### What would you use a session for?
 * To monitor and manage clients' permissions on the server.
 * To cherrypick data that is specific to that exact user.
@@ -390,19 +395,19 @@ def divide(a,b):
 
 #### What kind of software development methodologies do you know? What are the main features of these?
 * It’s a rigid linear model that consists of sequential phases (requirements, design, implementation, verification, maintenance) in which distinct goals are accomplished.
-	* Each phase must be 100% complete before the next phase can start, and traditionally there is no process for going back to 		modify the project or direction.
+  	- Each phase must be 100% complete before the next phase can start, and traditionally there is no process for going back to 		  modify the project or direction.
 * Adaptive approach which is able to respond to the changing requirements of the clients. Direct communication and feedback from customer.
 * Agile development methodology:
- -Requirement/Features/User stories/Product Backlog
- -Scrum Team(with lead)
- -Sprint Planning(relative time)
- -Sprints 1-4 Weeks Duration
- -Production deployment
- -Done Checklist
-   (While this process other people making the design, build it, inegrate, test the software)
- -Sprint Retrospective
- -Product review(customer input)
- -Potential Product Increment
+ 	-Requirement/Features/User stories/Product Backlog
+ 	-Scrum Team(with lead)
+ 	-Sprint Planning(relative time)
+ 	-Sprints 1-4 Weeks Duration
+ 	-Production deployment
+ 	-Done Checklist
+   	(While this process other people making the design, build it, inegrate, test the software)
+ 	-Sprint Retrospective
+ 	-Product review(customer input)
+ 	-Potential Product Increment
 #### What are the SCRUM roles?
 * The Product Owner: Setting directions for the project.
 * The SCRUM Master: Managing the development process.
