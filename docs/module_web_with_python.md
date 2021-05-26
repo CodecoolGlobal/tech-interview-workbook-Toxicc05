@@ -203,6 +203,7 @@ def divide(a,b):
 * AVG() - returns the average of a set.
 * COUNT() - returns the number of items in a set.
 * SUM() - returns the sum of all or distinct values in a set.
+* STRING_AGG(string, separator) - 
 #### What kind of JOIN types do you know in SQL? Could you give examples?
 * INNER JOIN: Returns records that have matching values in both tables
 * LEFT JOIN: Returns all records from the left table, and the matched records from the right table
