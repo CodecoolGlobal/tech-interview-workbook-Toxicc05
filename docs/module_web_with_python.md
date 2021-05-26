@@ -14,14 +14,19 @@
 * Front-end (What happens on the user's computer.)
 * Back-end (What happens on the server's side.)
 * Data storage and access (Usually SQL Datbase, or CSV file.)
+or
+* Preservation
+* Data Service
+* Business
+* Data Access
 ### Error handling
 #### What error can occur, when an array does not have an element on the requested index?
 * If the requested index is bigger than the length of the array, then an index error occurs.
 * Else, the program runs as it would normally, however, the returned value will be empty.
 #### What is the “finally” block, and how would you use it?
 * The finally block is part of a try-except block.
-* A try-except block is used to catch special exceptions types in a program.
-* The finally block runs once the try-except block has finished it's tasks. 
+* A try-except block is used to catch special exception types in a program.
+* The finally block runs once the try-except (or try-catch) block has finished it's tasks. 
 #### Why should we catch special exception types?
 * Exceptions are prone to break the running of our code when they occur.
 * Catching exceptions allows us to do a workaround when an exception occurs so that they won't break our code.
@@ -36,9 +41,9 @@
 * Most common script types include: Javascript, HTML, Flash <- now obsolete.
 * Via XSS, the client is able to: highjack accounts, change user settings, and/or poison cookies with malicious code.
 #### How to properly store passwords?
-* Password should be stored after put through a hashing (encoding) algorithm for increased security.
+* Password should be stored after put through a hashing (salting) or encoding algorithm for increased security.
 #### What is HTTPS?
-* Secure, encripted Hyper Text Transport Protocol connection handler.
+* Secure, encrypted Hyper Text Transport Protocol connection handler.
 * A modern, more secure connection handler that encrypts the requests between the client and the server.
 #### What is encryption and decryption?
 * Encryption is the process of encoding information.
@@ -76,7 +81,7 @@
 * The sorting algorithm has to go through the list without changing any element to know that it's sorted.
 #### Explain the process of finding the maximum and minimum value in a list of numbers!
 * We declare two variables, a minimum and a maximum and make it equal to the first element in the list.
-* Then we iterate over the list and when we find a number that is lower than our 'minimum' variable or bigger than our 'maximum' variable, then we swap the minimum's or the maxumum's value accordingly.
+* Then we iterate over the list and when we find a number that is lower than our 'minimum' variable or bigger than our 'maximum' variable, then we swap the minimum's or the maximum's value accordingly.
 #### Explain the process of calculating the average value in an array of numbers!
 * We iterate over every object in the array, sum up their values, then divide them with the length of the array.
 #### What is Big O complexity? Explain time and space complexity!
@@ -127,11 +132,12 @@
 #### What is recursion?
 * A recursive  function is when a function calls itself again based on a set of conditions.
 #### Write a recursive function which calculates the Fibonacci numbers!
-*	def fib(n):
-    	    if n == 1 or n == 2:
-                return 1
-    	    return fib(n-1)+fib(n-2)
-        print(fib(15))
+   def fib(n):
+	if n == 1 or n == 2:
+    	    return 1
+	return fib(n-1)+fib(n-2)
+
+	print(fib(15))```
 #### How to store a function in a variable in Python?
 * x = def foo(): print('asd')
 #### List the ways of defining a callable logical unit in JavaScript!
@@ -152,7 +158,7 @@
 * 'dragend' <-- function triggers upon deciding to end the dragging of the event target,
 * 'drop' <-- function triggers upon dropping the event target to somewhere other than where it started from originally.
 #### What is a callback function? Tell some examples of its usage.
-* Callback are when a function is used as argument in another function.
+* Callbacks are when a function is used as argument in another function.
 * callback functions are useful when we want to manipulate an other functions retun data.
 #### What is a Python decorator? How does it work? Tell some examples of its usage.
 * A decorator takes in a function, adds some functionality and returns it.
@@ -200,7 +206,7 @@ def divide(a,b):
 * LEFT JOIN: Returns all records from the left table, and the matched records from the right table
 * RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
 * FULL JOIN: Returns all records when there is a match in either left or right table
-#### What are the constraints in sql?
+#### What are the constraints in SQL?
 * Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement.
 * Constraints are used to limit the type of data that can go into a table column.
 * NOT NULL - Ensures that a column cannot have a NULL value
@@ -227,7 +233,7 @@ def divide(a,b):
 * One-to-many: This is the most common relationship type. In this type of relationship, a row in table A can have many matching rows in table B, but a row in table B can have only one matching row in table A.
 (Each customer can only be assigned to one city. One city can be assigned to many customers.)*
 #### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and address). How would you query all records related to Miskolc?
-* SELECT * from address WHERE city LIKE '%iskolc' or postcode = 3525.
+* SELECT * from address WHERE postcode = 3525
 #### How would you keep track of what kind of data has changed after an UPDATE or DELETE operation in a table?
 * I would add a log table to my database where I would insert the altered rows before alteration.
 ### HTML & CSS
@@ -237,31 +243,31 @@ def divide(a,b):
 * HTML is a form of plain text that is used by the browser to display websites.
 * XHTML is a combination of both. XHTML requires that the document sent to the browser is well formated, unlike regular HTML.
 #### How to include a JavaScript file in a webpage?
-* Via the <script/> html tag. 
+* Via the <script/> HTMK tag. 
 * Javascript can either be written into the HTML in between the <script/> tags or a javascript file can be allocated with the src parameter.
 * examples: <script> return 'asd' </script>, <script src="/asd/javascript.js"/>
 #### How to include a CSS file in a webpage?
-* Either by writing it into the html file between  <style/> tags or via linking the stylesheet at the beggining of the html file.
+* Either by writing it into the HTML file between  <style/> tags or via linking the stylesheet at the beginning of the HTML file.
 * examples: <style> .asd { border-color: black; } </style>, <link rel="stylesheet" type="text/css" href="/static/css/asd.css">
 #### How to select an element using its id in CSS?
 * By using a "#" before the id name.
-* example: '#asd' refers to the html element with the "asd" id.
+* example: '#asd' refers to the HTML element with the "asd" id.
 * ex: x = document.getElementById('asd')
 * ex: x = document.querySelector('#asd')[0] <-- returns a list, hence the index at the end.
 #### How to select elements using their class in CSS?
 * By putting a "." before the class name.
-* example: '.asd' refers to the html element with the "asd" class.
+* example: '.asd' refers to the HTML element with the "asd" class.
 * ex: x = document.getElementsByClass('asd')[0] <-- returns a list, hence the index at the end.
 * ex: x = document.querySelector('.asd')[0] <-- returns a list, hence the index at the end.
 #### How to select elements which have the ‘alpha’ and ‘beta’ classes in CSS?
 * By putting the alpha and beta classes next to each other, separated by a dot.
-* example: ".alpha.beta {color: red;}" will color every html element that has the "alpha" alpha class and the "beta" beta class to be red.
+* example: ".alpha.beta {color: red;}" will color every HTML element that has the "alpha" alpha class and the "beta" beta class to be red.
 #### How to select all list items in all ordered lists on the page in CSS?
-* By refering to the html elements by tag name.
+* By refering to the HTML elements by tag name.
 * example: "ol li {color: red;}" will color all elements in the ordered list to be red.
 #### How to select elements using their attributes in CSS?
 * By putting the attribute in square brackets after the target's tag name.
-* example: "a[target] {color: red;}" will color all html elements red if they have the "target" attribute.
+* example: "a[target] {color: red;}" will color all HTML elements red if they have the "target" attribute.
 #### What are UX and UI?
 * UI stands for User Interface. UI concerns the appearance an the interactable elemnts of the application.
 * UX stands for User Experience. UX concerns the overall user experience including usability, functionality, design, and engineering of the application.
@@ -287,7 +293,7 @@ def divide(a,b):
 #### When to use AJAX? Bring examples of its usage.
 * We use AJAX when we want to send or receive data from the server to the client without reloading the page.
 #### What is DOM and how to manipulate it from Javascript?
-* DOM stands for Document Oject Model for html and XML.
+* DOM stands for Document Oject Model for HTML and XML.
 * DOM represents the document structure, and style, content.
 * Javascript uses DOM objects to manipulate a page, to add/remove/or modify elements to/of a page.
 * Individual elements can be made variable of in Javascript by using "document.getElementById('id')" or similar built in functions.
@@ -330,11 +336,11 @@ def divide(a,b):
 ### DevOps
 
 #### Why is it good to use a package manager software?
-* Installing softwares are made way easier by their existence.
+* Installing softwares is made way easier by their existence.
 * With package managers, you are able to roll back to previous versions of programs with ease.
 #### Why is it good to use a virtual environment for a project?
 * Runtime enviroment updates can break programs when done due to differing syntaxes.
-* With virtual enviroments you can make sure that the projects enviroment stays the same as in the beggining, even if you upgrade your main runtime enviroment.
+* With virtual enviroments you can make sure that the projects enviroment stays the same as in the beginning, even if you upgrade your main runtime enviroment.
 
 ### Networks
 
@@ -351,7 +357,7 @@ def divide(a,b):
 * A REST API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.
 #### What is JSON? When to use?
 * JSON stands for JavaScript Object Notation.
-* JSON is an open standard  file format and data interchange format.
+* JSON is an open standard file format and data interchange format.
 * JSON files and data consist of key-value pairs but are not to be mistaken with DICT objects.
 * We use JSON when we want to deliver information from front-end to the server and back or when we want to store user settings.
 #### What is TCP/IP? What layers does it define, what are they responsible for?
@@ -380,12 +386,12 @@ def divide(a,b):
 * DNS services act like phonebooks for the internet.
 * When you search for 'youtube.com' in your browser, your request gets sent through a DNS server, that DNS server then translates your url and sends you to the corresponding IP address.
 #### What is a web server?
-* A web server is a computer and software combination that is connected to the internet and accepts HTTP requests do distribute web pages.
+* A web server is a computer and software combination that is connected to the internet and accepts HTTP requests to distribute web pages.
 #### Explain the client-server architecture.
 * The client sends a request to the server.
 * The server translates the request and gets the requested information from it's data storage (usually database).
-* The server then sends a html template to the users browser with the requested data.
-* The client's browser then compiles the html template and displays the webpage for the user.
+* The server then sends a HTML template to the users browser with the requested data.
+* The client's browser then compiles the HTML template and displays the webpage for the user.
 #### What would you use a session for?
 * To monitor and manage clients' permissions on the server.
 * To cherrypick data that is specific to that exact user.
@@ -394,7 +400,7 @@ def divide(a,b):
 ## Software Development Methodologies
 
 #### What kind of software development methodologies do you know? What are the main features of these?
-* It’s a rigid linear model that consists of sequential phases (requirements, design, implementation, verification, maintenance) in which distinct goals are accomplished.
+* Waterfall methodology - It’s a rigid linear model that consists of sequential phases (requirements, design, implementation, verification, maintenance) in which distinct goals are accomplished.
   	- Each phase must be 100% complete before the next phase can start, and traditionally there is no process for going back to 		  modify the project or direction.
 * Adaptive approach which is able to respond to the changing requirements of the clients. Direct communication and feedback from customer.
 * Agile development methodology:
