@@ -132,12 +132,14 @@ or
 #### What is recursion?
 * A recursive  function is when a function calls itself again based on a set of conditions.
 #### Write a recursive function which calculates the Fibonacci numbers!
-   def fib(n):
-	if n == 1 or n == 2:
-    	    return 1
-	return fib(n-1)+fib(n-2)
+```Python
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    return fib(n-1)+fib(n-2)
 
-	print(fib(15))```
+print(fib(15))
+```
 #### How to store a function in a variable in Python?
 * x = def foo(): print('asd')
 #### List the ways of defining a callable logical unit in JavaScript!
@@ -402,7 +404,8 @@ def divide(a,b):
 #### What kind of software development methodologies do you know? What are the main features of these?
 * Waterfall methodology - It’s a rigid linear model that consists of sequential phases (requirements, design, implementation, verification, maintenance) in which distinct goals are accomplished.
   	- Each phase must be 100% complete before the next phase can start, and traditionally there is no process for going back to 		  modify the project or direction.
-* Adaptive approach which is able to respond to the changing requirements of the clients. Direct communication and feedback from customer.
+* Adaptive approach which is able to respond to the changing requirements of the clients. 
+	-Direct communication and feedback from customer.
 * Agile development methodology:
  	-Requirement/Features/User stories/Product Backlog
  	-Scrum Team(with lead)
