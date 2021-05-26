@@ -189,8 +189,8 @@ def divide(a,b):
 
 #### How can you connect your application to a database server? What are the possible ways?
 * I need a connection string and a connection object from the database provider to set a session with the database server. For Python we can use the psycopg2 module api's to connect an application with psql database.
-* method 1: The entire environment resides on a single server. For a typical web application, that would include the web server, application server, and database server.
-* method 2: The database management system (DBMS) can be separated from the rest of the environment to eliminate the resource contention between the application and the database, and to increase security.
+ - method 1: The entire environment resides on a single server. For a typical web application, that would include the web server, application server, and database server.
+ - method 2: The database management system (DBMS) can be separated from the rest of the environment to eliminate the resource contention between the application and the database, and to increase security.
 #### When do you use the DISTINCT keyword in SQL?
 * When we want to retrieve information in such a way that it does not contain repetitions.
 #### Talk about the behavior/goal of these base SQL clauses: WHERE, GROUP BY, HAVING, ORDER BY?
